@@ -146,7 +146,7 @@ struct TinyGPSDecimal {
   uint32_t age() const {
     return valid ? millis() - lastCommitTime : (uint32_t)ULONG_MAX;
   }
-  int32_t value() {
+  float value() {
     updated = false;
     return val;
   }
@@ -156,7 +156,7 @@ struct TinyGPSDecimal {
  private:
   bool valid, updated;
   uint32_t lastCommitTime;
-  int32_t val, newval;
+  float val, newval;
   void commit();
   void set(const char *term);
 };
@@ -255,8 +255,8 @@ class TinyGPSPlus {
   TinyGPSAltitude altitude;
   TinyGPSInteger satellites;
   TinyGPSHDOP hdop;
-  TinyGPSInteger stdLat;
-  TinyGPSInteger stdLon;
+  TinyGPSDecimal stdLat;
+  TinyGPSDecimal stdLon;
 
   static const char *libraryVersion() { return _GPS_VERSION; }
 
