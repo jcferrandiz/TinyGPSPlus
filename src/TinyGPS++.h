@@ -255,8 +255,8 @@ class TinyGPSPlus {
   TinyGPSAltitude altitude;
   TinyGPSInteger satellites;
   TinyGPSHDOP hdop;
-  TinyGPSInteger stdLat;
-  TinyGPSInteger stdLon;
+  TinyGPSDecimal stdLat;
+  TinyGPSDecimal stdLon;
 
   static const char *libraryVersion() { return _GPS_VERSION; }
 
