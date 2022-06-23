@@ -266,8 +266,8 @@ bool TinyGPSPlus::endOfTermHandler() {
       case COMBINE(GPS_SENTENCE_GPGGA, 9):  // Altitude (GPGGA)
         altitude.set(term);
         break;
-      case COMBINE(GPS_SENTENCE_GPGST, 3):  // Fix data (GPGST)
-        sentenceHasFix = term[0] > '0';
+      case COMBINE(GPS_SENTENCE_GPGST, 2):  // Fix data (GPGST)
+        sentenceHasFix = term[0] >= '0';
       case COMBINE(GPS_SENTENCE_GPGST, 6):  // Std. dev. of lat error (GPGST)
         stdLat.set(term);
         break;
