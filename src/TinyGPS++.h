@@ -146,7 +146,7 @@ struct TinyGPSDecimal {
   uint32_t age() const {
     return valid ? millis() - lastCommitTime : (uint32_t)ULONG_MAX;
   }
-  int32_t value() {
+  uint32_t value() {
     updated = false;
     return val;
   }
@@ -156,7 +156,7 @@ struct TinyGPSDecimal {
  private:
   bool valid, updated;
   uint32_t lastCommitTime;
-  int32_t val, newval;
+  uint32_t val, newval;
   void commit();
   void set(const char *term);
 };
